@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Vivekayuga</title>
+        <meta name="description" content="Vivekayuga">
+        <meta property="og:title" content="Vivekayuga" />
+        <meta property="og:url" content="https://vivekayuga.in" />
+        <meta property="og:description" content="Vivekayuga">
+        <meta property="og:image" content="images/gb-logo.png">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+        <link rel="stylesheet" href="main.css" />
+        <!-- <link rel="stylesheet" href="https://unpkg.com/@primer/css@16.3.0/dist/primer.css" /> -->
+         <link rel="stylesheet" href="primer-mod.css" />
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+        <script src="app.js"></script>  
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+        
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+        <!-- Razorpay Standard Integration: https://razorpay.com/docs/payment-gateway/web-integration/standard -->
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script> 
+    </head>
+<body ng-cloak id="cmApp" ng-app="crowdmeta" ng-controller="cmController" ng-init="init()">
+    <header>
+        <div class="collapse bg-success" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-white">Vivekayuga is a dynamic non-governmental organization (NGO) that is making significant strides in the field of environmental education and conservation. Committed to fostering a sustainable future, Vivekayuga recognizes the urgent need to educate communities about the importance of environmental stewardship and the impact of human activities on the planet.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="fab fa-twitter me-2" style="color: white;  cursor: pointer;"></i><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><i class="fa fa-facebook me-2" style="color: white; cursor: pointer;"></i><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><i class="fa fa-envelope me-2" style="color: white; cursor: pointer;"></i><a href="#" class="text-white">Send an Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-success bg-gradient shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> -->
+                    <img src="images/gb-logo.png" width="30" height="30">
+                    <strong>&nbsp; Vivekayuga &nbsp;</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="top"></div>
+    
+    <main class="bg-white">
+        <div class="container col-xxl-8 px-4 pt-5 pb-2">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-2">
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3" style="font-family: sans-serif;">{{campaign.title}}</h1>
+                    <p class="lead">{{campaign.description}}</p>
+                    <div class="d-none mt-3 row justify-content-between">
+                        <div class="col-8">
+                            <h3 class="text-success">{{getLocalAmount(campaign.raised, "inr")}}</h3> raised out of {{getLocalAmount(campaign.target, "inr")}}
+                        </div>
+                    </div>
+
+                    <div class="d-none progress my-1">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>                    
+                    </div>
+                    <div class="d-none col-4">
+                        <strong>{{campaign.days}} Days remaining</strong> 
+                    </div>
+<!--                     <div class="mt-1 row justify-content-between">
+                        <div class="col-4">
+                            <i class="fa fa-heart" aria-hidden="true" style="color: #fe2c54"></i> <strong> {{campaign.supporters.length}} Supporters </strong>
+                        </div>
+                        <div class="col-4">
+                            <strong>{{campaign.days}} Days</strong>   
+                        </div>
+                    </div> -->
+
+
+                    <div class="my-3 primer AvatarStack AvatarStack--three-plus" style="cursor: pointer;">
+                      <div
+                        class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1"
+                      >
+                        <img
+                          class="primer avatar"
+                          ng-repeat="supporter in campaign.supporters.slice(0,2) track by $index"
+                          height="20"
+                          ng-src={{getPhoto(supporter)}}
+                          width="20"
+                          ng-attr-title="{{supporter.name}}"                                      
+                        />
+                        <div ng-if="campaign.supporters.length>3" class="avatar avatar-more"></div>
+                        <img
+                          class="primer avatar"
+                          ng-repeat="supporter in campaign.supporters.slice(2,15) track by $index"
+                          height="20"
+                          ng-src={{getPhoto(supporter)}}
+                          width="20"
+                          ng-attr-title="{{supporter.name}}"                                      
+                        />
+
+                    <p ng-if="campaign.supporters && campaign.supporters.length" class="text-small color-text-secondary css-truncate css-truncate-overflow">{{getSupporterText(campaign)}}</p>
+                      </div>
+
+                    </div>
+
+                    <div class="d-none mt-3 d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a role="button" href="#rewards" class="d-none w-100 btn btn-success bg-gradient btn-lg px-4 me-md-2">Support this Project</a>
+                    </div>
+                    <section class="d-none mt-3 text-center mb-3">
+                        <!-- Facebook -->
+                        <i class="fab fa-facebook-f fa-2x me-2" style="color: #3b5998; cursor: pointer;"></i>
+                        <!-- Twitter -->
+                        <i class="fab fa-twitter fa-2x me-2" style="color: #55acee;  cursor: pointer;"></i>
+                        <!-- Instagram -->
+                        <i class="fab fa-instagram fa-2x me-2" style="color: #ac2bac;  cursor: pointer;"></i>
+                        <!-- Linkedin -->
+                        <i class="fab fa-linkedin-in fa-2x me-2" style="color: #0082ca;  cursor: pointer;"></i>
+                        <!-- Pinterest -->
+                        <i class="fab fa-pinterest fa-2x me-2" style="color: #c61118;  cursor: pointer;"></i>
+                        <!-- Reddit -->
+                        <i class="fab fa-reddit-alien fa-2x me-2" style="color: #ff4500;  cursor: pointer;"></i>
+                        <!-- Whatsapp -->
+                        <i class="fab fa-whatsapp fa-2x me-2" style="color: #25d366;  cursor: pointer;"></i>
+                    </section>
+                </div>
+                <div style="cursor:pointer;" class="col-md-6 col-12" data-bs-toggle="modal" data-bs-target="#thumbnailModal">
+                    <div class="row h-60">
+                        <img ng-src="{{campaign.image}}" width="100%" class="rounded">
+                    </div>
+                    <div class="row h-40 mt-2 g-1" >
+                        <div class="col-3" ng-repeat="thumbnail in campaign.thumbnails">
+                            <img class="rounded" ng-src="{{thumbnail}}" width="100%" height="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-1 py-3 bg-light">
+            <!-- Description, etc -->
+            <div class="col-md-12 col-12 pl-md-10 pl-2">
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" style="color: grey; cursor: pointer;" aria-current="true" id="link-about">About</a>
+                            </li>
+                            <!--
+                                <li class="nav-item">
+                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-faq">FAQ</a>
+                                </li>-->
+                            <li class="d-none nav-item">
+                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-supporters">Supporters</a>
+                            </li>
+                            <!--
+                                <li class="nav-item">
+                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-updates">Updates</a>
+                                </li>-->             
+                            <li class="d-none nav-item">
+                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-shop">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-gallery">Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <section id="section-about">
+                        <p>Vivekayuga is a dynamic non-governmental organization (NGO) that is making significant strides in the field of environmental education and conservation. Committed to fostering a sustainable future, Vivekayuga recognizes the urgent need to educate communities about the importance of environmental stewardship and the impact of human activities on the planet.</p>
+
+<p>Through innovative programs, workshops, and awareness campaigns, Vivekayuga aims to empower individuals with the knowledge and skills to make environmentally conscious choices in their daily lives. By promoting biodiversity conservation, waste management, renewable energy, and eco-friendly practices, the organization strives to create a greener and healthier world for present and future generations.</p>
+
+<p>With dedicated volunteers and a passionate team, Vivekayuga is at the forefront of inspiring positive change and nurturing a deep appreciation for the environment. Their unwavering commitment to environmental education is paving the way for a brighter, more sustainable future.</p>
+
+                        </section>
+                        <section id="section-faq" class="d-none">FAQ</section>
+                        
+                        <section id="section-updates" class="d-none">Updates/Posts</section>
+                        <section id="section-shop" class="d-none">
+                            <div class="row" ng-repeat="product in products">
+                                <div class="col-5">
+                                    <img ng-src="{{product.image}}" class="my-2 rounded" width="100%">
+                                    <div ng-click="showPreview(product)" class="row justify-content-start" style="cursor:pointer;">
+                                        <div ng-repeat="thumbnail in product.thumbnails" class="col-3" style="padding-left: 0.5 rem; padding-right:0px">
+                                            <img ng-src="{{thumbnail}}" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <h3>{{product.title}}</h3>
+                                    <br>
+                                    <span>A comprehensive study of the most historically significant forts of Karnataka</span>
+                                    <h6 class="my-3">
+                                        <span class="text-danger mr-1">{{getLocalAmount(product.amount, "inr")}}</span>
+                                        <span class="text-grey"><s>{{getLocalAmount(product.original_amount, "inr")}}</s></span>
+                                    </h6>
+                                    <button type="button" ng-click="enterCheckout(product)" class="btn btn-primary mr-1 mt-2"><i class="fas fa-shopping-cart pr-2"></i> &nbsp; Buy Now </button>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="section-gallery" class="d-none">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-4 mb-4" ng-repeat="tn in campaign.gallery" style="display: flex; align-items: center;">
+                                    <div class="card">
+                                        <img ng-src="{{tn}}" class="bd-placeholder-img card-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <br>
+<div class="row my-3">
+                    <h2 class="section-title mx-auto text-center">Thanks to our Supporters!</h2>
+                    <h4 class="d-none mx-auto text-center">{{campaign.supporters.length}} Supporters contributed to {{campaign.title}}</h4>
+                    <div class="d-none primer d-flex flex-row justify-content-center my-2 flex-wrap">
+                        <span class="m-1" ng-repeat="supporter in campaign.supporters">
+                        <img ng-src={{getPhoto(supporter)}} class="avatar avatar avatar-4" ng-attr-title="{{supporter.name}}" style="cursor: pointer;">
+                        </span>
+                    </div>
+                    <br>
+                    <div class="d-none col-md-12 mt-5">
+                        <div id="testimonial-slider" class="owl-carousel">
+                            <div class="testimonial">
+                                <p class="description">
+                                    Hampi is a sight to behold. All the best team!
+                                </p>
+                                <h3 class="title">Arjun Kumar</h3>
+                                <span class="post">₹5000</span>
+                            </div>
+                            <div class="testimonial">
+                                <p class="description">
+                                    Thanks for making this happen. Good luck!
+                                </p>
+                                <h3 class="title">Srinindhi Shetty</h3>
+                                <span class="post">₹25000</span>
+                            </div>
+                            <div class="testimonial">
+                                <p class="description">
+                                    Amazing project and photographs.
+                                </p>
+                                <h3 class="title">Annie Leonhart</h3>
+                                <span class="post">₹9999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <!-- Pledge & Rewards -->
+            
+        </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-0" id="checkoutBody">
+                    <form>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="col-12 my-2">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid name is required.
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input id="phone" type="tel" class="form-control" name="phone"/>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <label for="address" class="form-label">Shipping Address</label>
+                                    <textarea class="form-control" id="address" placeholder="#61/A, Vivekayuga Apartments, Whitefield, Bengaluru - 560066" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <label for="amount" class="form-label">Selected Item: </label>
+                                    <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
+                                        <span>₹ &nbsp;</span><span id="amount">{{selected_product.amount}}</span><br> 
+                                    </div>
+                                    <span style="font-style: italic">{{selected_product.description}}</span>
+                                </div>
+                            </div>
+                            <div class="col-4 bg-light">
+                                <div class = "col-12">
+                                    <label for="wizard-picture" class="form-label"></label>
+                                    <div class="picture-container">
+                                        <div class="picture">
+                                            <i style="color:black; padding-top: 7px;    padding-right: 15px; position: absolute; right: 0; top: 0;" class="fa fa-pencil"></i>
+                                            <img src="images/pfp-placeholder.png" class="picture-src" id="wizardPicturePreview" title="">
+                                            <input type="file" accept="image/*" id="wizard-picture" class="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Write a message..</label>
+                                    <textarea class="form-control" style="height:100%" id="message" placeholder="All the very best!"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success mx-auto" ng-click="checkoutToGateway()">Continue to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="certificateModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Thank you for supporting this project!</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-8 col-lg-9 col-xl-8">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <img ng-src="{{user_profile.image_src}}" id="cert-user-image" class="rounded-circle mb-4 mb-lg-0 shadow-2" width="90"
+                                            height="90">
+                                    </div>
+                                    <div class="flex-grow-1 ms-4 ps-3">
+                                        <figure>
+                                            <blockquote class="blockquote mb-4">
+                                                <p>
+                                                    <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                                    <span class="font-italic">I supported this awesome Hampi Photography project on Vivekayuga. Help me spread the word!</span>
+                                                </p>
+                                            </blockquote>
+                                            <figcaption class="blockquote-footer">
+                                                {{user_profile.name}}
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-5">
+                                <img src="images/certificate/hampi-vector.png" width="100%">
+                            </div>
+                            <div class="col-5">
+                                <img src="images/crowdmeta-logo.png" width="100%"> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span>Spread the Word!</span>
+                    <span class="text-center mx-auto">
+                        <!-- Facebook -->
+                        <i class="fab fa-facebook-f fa-2x me-2" style="color: #3b5998; cursor: pointer;"></i>
+                        <!-- Twitter -->
+                        <i class="fab fa-twitter fa-2x me-2" style="color: #55acee;  cursor: pointer;"></i>
+                        <!-- Instagram -->
+                        <i class="fab fa-instagram fa-2x me-2" style="color: #ac2bac;  cursor: pointer;"></i>
+                        <!-- Linkedin -->
+                        <i class="fab fa-linkedin-in fa-2x me-2" style="color: #0082ca;  cursor: pointer;"></i>
+                        <!-- Pinterest -->
+                        <i class="fab fa-pinterest fa-2x me-2" style="color: #c61118;  cursor: pointer;"></i>
+                        <!-- Reddit -->
+                        <i class="fab fa-reddit-alien fa-2x me-2" style="color: #ff4500;  cursor: pointer;"></i>
+                        <!-- Whatsapp -->
+                        <i class="fab fa-whatsapp fa-2x me-2" style="color: #25d366;  cursor: pointer;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Product Images Modal -->
+    <div class="modal fade" id="previewProductModal" tabindex="-1" aria-labelledby="previewProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewProductModalLabel">Images ({{preview_product.thumbnails.length}})</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body">
+                    <div class="col-8">
+                        <img id="product-image-focus" ng-src="{{preview_product.focusTn}}" class="py-2" width="100%">
+                    </div>
+                    <div class="col-4 py-2">
+                        <div class="row justify-content-start" >
+                            <div class="col-4" ng-repeat="thumbnail in preview_product.thumbnails" style="padding-left: 0.5 rem; padding-right:0px">
+                                <img ng-click="setFocusThumbnail(thumbnail)" style="cursor:pointer;" ng-src="{{thumbnail}}" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Campaign Thumbnails Modal-->
+    <div class="modal fade" id="thumbnailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+                            <button ng-repeat="tn in campaign.thumbnails.slice(1) track by $index" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$index + 1}}" aria-label="Slide {{$index + 1}}" ></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img ng-src="{{campaign.thumbnails[0]}}" class="d-block w-100"> 
+                            </div>
+                            <div ng-repeat="tn in campaign.thumbnails.slice(1)" class="carousel-item">
+                                <img ng-src="{{tn}}" class="d-block w-100">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+            <a href="#top">Back to top</a>
+            </p>
+
+            <p class="mb-1">&copy; Vivekayuga</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        //Click event handler for nav-items
+        let id_selected_section = "section-about";
+        $('.nav-link').on('click',function(){
+        
+                //Remove any previous active classes
+                $('.nav-link').removeClass('active');
+        
+                //Add active class to the clicked item
+                $(this).addClass('active');
+        
+                let eleId = this.id;
+                //If you parse last word after hyphen then use it to select section
+                //Is this a violation of coupling rule? Element IDs should be proper
+        
+                let id_previous_selected_section = id_selected_section;
+        
+                switch(eleId) {
+                                //Select new section
+                        case "link-about":
+                                id_selected_section = "section-about";
+                                break;
+                        case "link-faq":
+                                id_selected_section = "section-faq";
+                                break;
+                        case "link-supporters":
+                                id_selected_section = "section-supporters";
+                                break;
+                        case "link-updates":
+                                id_selected_section = "section-updates";
+                                break;
+                        case "link-shop":
+                                id_selected_section = "section-shop";
+                                break;
+                        case "link-gallery":
+                                id_selected_section = "section-gallery";
+                                break;          
+                        default:
+                                id_selected_section = "section-about";
+                }
+        
+                if(id_selected_section != id_previous_selected_section){
+                        $('#'+ id_selected_section).removeClass("d-none");
+                        $('#'+ id_previous_selected_section).addClass("d-none");
+                }
+        });
+        
+        
+        window.addEventListener('load', function() {
+            var linkAbout = document.getElementById('link-about');
+            if (linkAbout) {
+                linkAbout.click();
+            }
+        });
+       
+
+        /*** For debugging purposes only **/
+        let getScope = () =>{
+        return angular.element(document.getElementById('cmApp')).scope();
+        }
+        
+        
+        $(document).ready(function(){
+        $("#testimonial-slider").owlCarousel({
+        items:1,
+        itemsDesktop:[1000,1],
+        itemsDesktopSmall:[979,1],
+        itemsTablet:[768,1],
+        pagination:true,
+        navigation:true,
+        navigationText:["",""],
+        slideSpeed:1000,
+        autoPlay:true
+        });
+        
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        initialCountry: "in",
+        placeholderNumberType: "MOBILE",
+        separateDialCode: true,
+        });
+        });
+        
+    </script>
+</body>
+</html>
