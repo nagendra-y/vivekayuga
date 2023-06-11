@@ -489,3 +489,212 @@ cmGlobal.controller('cmController', ['$scope', '$window', '$compile', '$timeout'
 				}
 		}]);
 
+$(document).ready(function() {
+
+    const form = document.getElementById('contact_form');
+    const booking_form = document.getElementById('booking_form');
+
+    const greetingInput = document.querySelector('input[name="greeting"]');
+
+    const nameInput = document.querySelector('input[name="name"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const messageInput = document.querySelector('textarea[name="message"]');
+    const admin_email = 'vivekayugaprakashana@gmail.com';
+    const admin_phone = '917019882153';
+
+    function continueWithEmail() {
+        const from = encodeURIComponent(emailInput.value);
+        const name = encodeURIComponent(nameInput.value);
+        let subject = `Query from ${name}`;
+        let message = "Hello, I have a query about Vivekayuga.\n\n";
+        if (greetingInput) {
+            message = greetingInput.value + "\n\n";
+            subject = `Query from ${name}`;
+        }
+
+        let body = message;
+
+        body += `Message: ${messageInput.value.replace(/(\r\n|\n|\r)/gm, "")}\n`;
+        body += `Email: ${emailInput.value}\n`;
+        const phoneValue = phoneInput.value.replace(/\D/g, '');
+        const phoneCountryCode = iti.getSelectedCountryData().dialCode;
+        body += `Phone: +${phoneCountryCode} ${phoneValue}\n`;
+        body += `\nThank you,\n${nameInput.value}`; // add "Thank you, {Sender name}" message at the end
+
+        let mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${admin_email}&su=${subject}&body=${encodeURIComponent(body)}&service=mail`;
+        if (navigator.userAgent.match(/(Android|iPhone|iPod|iPad)/i)) {
+            mailtoLink = `mailto:${admin_email}?subject=${subject}&body=${encodeURIComponent(body)}`;
+        }
+
+        if (navigator.userAgent.match(/(Android|iPhone|iPod|iPad)/i)) {
+            window.location.href = mailtoLink;
+        } else {
+            window.open(mailtoLink, '_blank');
+        }
+    }
+
+    function continueWithWhatsApp() {
+        const name = encodeURIComponent(nameInput.value);
+        let messageIntro = "Hello, I have a query about Vivekayuga.\n\n";
+
+        if (greetingInput) {
+            messageIntro = greetingInput.value + "\n\n";
+        }
+
+        let message = messageIntro;
+        message += `Message: ${messageInput.value}\n`;
+        const phoneValue = phoneInput.value.replace(/\D/g, '');
+        const phoneCountryCode = iti.getSelectedCountryData().dialCode;
+        message += `Phone: +${phoneCountryCode} ${phoneValue}\n`;
+        message += `Email: ${emailInput.value}\n`;
+        message += `\nThank you,\n${nameInput.value}`; // add "Thank you, {Sender name}" message at the end
+
+        let whatsappLink = `https://web.whatsapp.com/send?phone=${admin_phone}&text=${encodeURIComponent(message)}`;
+        if (navigator.userAgent.match(/(Android|iPhone|iPod|iPad)/i)) {
+            whatsappLink = `https://wa.me/${admin_phone}?text=${encodeURIComponent(message)}`;
+        }
+        window.open(whatsappLink, '_blank');
+    }
+
+    window.continueWithWhatsApp = continueWithWhatsApp;
+    window.continueWithEmail = continueWithEmail;
+
+    console.log("heelo");
+    console.log(form); 
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            console.log("submit");
+            event.preventDefault();
+            if (validateInputs()) {
+                showModal();
+            }
+        });
+    }
+
+    if (booking_form) {
+        booking_form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validateInputs()) {
+                showModal();
+            }
+        });
+    }
+
+    function validateInputs() {
+        let isValid = true;
+        if (nameInput.value.trim() === '') {
+            nameInput.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            nameInput.classList.remove('is-invalid');
+        }
+        if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value)) {
+            emailInput.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            emailInput.classList.remove('is-invalid');
+        }
+        if (messageInput.value.trim() === '') {
+            messageInput.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            messageInput.classList.remove('is-invalid');
+        }
+        return isValid;
+    }
+
+    function isValidEmail(email) {
+        // simple email validation using regex
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showModal() {
+        console.log("showModal");
+        const modal = document.createElement('div');
+        modal.classList.add('modal', 'fade');
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-hidden', 'true');
+
+        modal.innerHTML = `
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Choose an option</h5>
+            <button type="button" onclick="$('.modal').modal('hide')" class="close" data-dismiss="modal" aria-label="Cancel">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>How would you like to continue?</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="window.continueWithEmail()">
+              <i class="fa fa-envelope"></i> Continue with Email
+            </button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.continueWithWhatsApp()">
+              <i class="fa fa-whatsapp"></i> Continue with WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+        document.body.appendChild(modal);
+        $(modal).modal('show');
+    }
+
+    $(document).ready(function () {
+        const input = document.querySelector("#phone");
+        const errorMsg = document.querySelector("#error-msg");
+        const validMsg = document.querySelector("#valid-msg");
+
+        // here, the index maps to the error code returned from getValidationError - see readme
+        const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+        // initialise plugin with options
+        window.iti = window.intlTelInput(input, {
+            initialCountry: "in",
+            utilsScript: "intltelinput-utils.js"
+        });
+
+        const reset = () => {
+            input.classList.remove("error");
+            errorMsg.innerHTML = "";
+            errorMsg.classList.add("hide");
+            validMsg.classList.add("hide");
+        };
+
+        // on blur: validate
+        input.addEventListener('blur', () => {
+            reset();
+            if (input.value.trim()) {
+                if (iti.isValidNumber()) {
+                    validMsg.classList.remove("hide");
+                } else {
+                    input.classList.add("error");
+                    const errorCode = iti.getValidationError();
+                    errorMsg.innerHTML = errorMap[errorCode];
+                    errorMsg.classList.remove("hide");
+                }
+            }
+        });
+
+        // on keyup / change flag: reset
+        input.addEventListener('change', reset);
+        input.addEventListener('keyup', reset);
+
+        // hide validMsg until input has value
+        validMsg.classList.add("hide");
+        input.addEventListener('input', () => {
+            if (input.value.trim()) {
+                validMsg.classList.add("hide");
+            }
+        });
+    });
+
+
+
+});
+
