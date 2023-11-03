@@ -11,7 +11,7 @@ cmGlobal.controller('cmController', ['$scope', '$window', '$compile', '$timeout'
 				
 				$scope.campaign = {
 						"title": "Vivekayuga Foundation",
-						"description": "Through innovative programs, workshops, and awareness campaigns, Vivekayuga aims to empower individuals with the knowledge and skills to make environmentally conscious choices in their daily lives.",
+                    "description": "We are in to value education since 2002. Creating awareness about the great Indian human values of life building among our students, youth... etc through Seminars, Personality Development Workshops in different parts of Karnataka.",
 						"raised": 0, 
 						"target": 3000000, 
 						"days": 42,
@@ -413,12 +413,6 @@ cmGlobal.controller('cmController', ['$scope', '$window', '$compile', '$timeout'
 
 				$scope.init = function(){
 						$scope.refreshData();
-
-						// $('#certificateModal').modal('show');
-						document.getElementById("link-supporters").click();	
-						$("#wizard-picture").change(function(){
-								$scope.readURL(this);
-						});
 				}
 
 				$scope.readURL = function(input) {
@@ -560,7 +554,6 @@ $(document).ready(function() {
     window.continueWithWhatsApp = continueWithWhatsApp;
     window.continueWithEmail = continueWithEmail;
 
-    console.log("heelo");
     console.log(form); 
     if (form) {
         form.addEventListener('submit', (event) => {
@@ -686,7 +679,6 @@ $(document).ready(function() {
         input.addEventListener('keyup', reset);
 
         // hide validMsg until input has value
-        validMsg.classList.add("hide");
         input.addEventListener('input', () => {
             if (input.value.trim()) {
                 validMsg.classList.add("hide");

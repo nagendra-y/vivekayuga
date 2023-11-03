@@ -8,7 +8,7 @@
         <meta property="og:title" content="Vivekayuga" />
         <meta property="og:url" content="https://vivekayuga.in" />
         <meta property="og:description" content="Vivekayuga">
-        <meta property="og:image" content="images/gb-logo.png">
+        <meta property="og:image" content="vy-logo-en.png">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
@@ -47,7 +47,10 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p class="text-white">Vivekayuga is a dynamic non-governmental organization (NGO) that is making significant strides in the field of environmental education and conservation. Committed to fostering a sustainable future, Vivekayuga recognizes the urgent need to educate communities about the importance of environmental stewardship and the impact of human activities on the planet.</p>
+                        <p class="text-white">VIVEKAYUGA Foundation is a registered trust. A group of service oriented
+youth from all caste and class of society has come forward to render selfless
+service under this organization. The benefits of the Trust shall be open to
+all irrespective of caste, creed or religion.</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
@@ -62,7 +65,6 @@
             <div class="container">
                 <a href="#" class="navbar-brand d-flex align-items-center">
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> -->
-                    <img src="images/gb-logo.png" width="30" height="30">
                     <strong>&nbsp; Vivekayuga &nbsp;</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,13 +75,19 @@
     </header>
     
     <div id="top"></div>
-    
+
     <main class="bg-white">
         <div class="container col-xxl-8 px-4 pt-5 pb-2">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-2">
-                <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3" style="font-family: sans-serif;">{{campaign.title}}</h1>
+            <div class="lead row align-items-center flex-lg-row-reverse g-5 py-2">
+                <div class="col-lg-4">
+        <div class="logo">
+            <!-- Your left logo image or content goes here -->
+            <img style="width:100%" src="vy-logo-en.png" alt="English Logo">
+        </div>
+                    <p class="lead">VIVEKAYUGA Foundation is a registered trust. A group of service oriented youth from all caste and class of society has come forward to render selfless service under this organization. The benefits of the Trust shall be open to all irrespective of caste, creed or religion.</p>
                     <p class="lead">{{campaign.description}}</p>
+                    
+
                     <div class="d-none mt-3 row justify-content-between">
                         <div class="col-8">
                             <h3 class="text-success">{{getLocalAmount(campaign.raised, "inr")}}</h3> raised out of {{getLocalAmount(campaign.target, "inr")}}
@@ -102,32 +110,6 @@
                     </div> -->
 
 
-                    <div class="my-3 primer AvatarStack AvatarStack--three-plus" style="cursor: pointer;">
-                      <div
-                        class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1"
-                      >
-                        <img
-                          class="primer avatar"
-                          ng-repeat="supporter in campaign.supporters.slice(0,2) track by $index"
-                          height="20"
-                          ng-src={{getPhoto(supporter)}}
-                          width="20"
-                          ng-attr-title="{{supporter.name}}"                                      
-                        />
-                        <div ng-if="campaign.supporters.length>3" class="avatar avatar-more"></div>
-                        <img
-                          class="primer avatar"
-                          ng-repeat="supporter in campaign.supporters.slice(2,15) track by $index"
-                          height="20"
-                          ng-src={{getPhoto(supporter)}}
-                          width="20"
-                          ng-attr-title="{{supporter.name}}"                                      
-                        />
-
-                    <p ng-if="campaign.supporters && campaign.supporters.length" class="text-small color-text-secondary css-truncate css-truncate-overflow">{{getSupporterText(campaign)}}</p>
-                      </div>
-
-                    </div>
 
                     <div class="d-none mt-3 d-grid gap-2 d-md-flex justify-content-md-start">
                         <a role="button" href="#rewards" class="d-none w-100 btn btn-success bg-gradient btn-lg px-4 me-md-2">Support this Project</a>
@@ -149,357 +131,84 @@
                         <i class="fab fa-whatsapp fa-2x me-2" style="color: #25d366;  cursor: pointer;"></i>
                     </section>
                 </div>
-                <div style="cursor:pointer;" class="col-md-6 col-12" data-bs-toggle="modal" data-bs-target="#thumbnailModal">
-                    <div class="row h-60">
-                        <img ng-src="{{campaign.image}}" width="100%" class="rounded">
-                    </div>
-                    <div class="row h-40 mt-2 g-1" >
-                        <div class="col-3" ng-repeat="thumbnail in campaign.thumbnails">
-                            <img class="rounded" ng-src="{{thumbnail}}" width="100%" height="100%">
-                        </div>
-                    </div>
+                <div class="col-md-8 col-12">
+                    <div id="ng2" data-nanogallery2>
                 </div>
             </div>
         </div>
-        <div class="row mx-1 py-3 bg-light">
             <!-- Description, etc -->
-            <div class="col-md-12 col-12 pl-md-10 pl-2">
-                <div class="card">
-                    <div class="card-header">
-                        <ul class="nav nav-tabs card-header-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" style="color: grey; cursor: pointer;" aria-current="true" id="link-about">About</a>
-                            </li>
-                            <!--
-                                <li class="nav-item">
-                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-faq">FAQ</a>
-                                </li>-->
-                            <li class="d-none nav-item">
-                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-supporters">Supporters</a>
-                            </li>
-                            <!--
-                                <li class="nav-item">
-                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-updates">Updates</a>
-                                </li>-->             
-                            <li class="d-none nav-item">
-                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-shop">Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: grey; cursor: pointer;" id="link-gallery">Gallery</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <section id="section-about">
-                        <p>Vivekayuga is a dynamic non-governmental organization (NGO) that is making significant strides in the field of environmental education and conservation. Committed to fostering a sustainable future, Vivekayuga recognizes the urgent need to educate communities about the importance of environmental stewardship and the impact of human activities on the planet.</p>
-
-<p>Through innovative programs, workshops, and awareness campaigns, Vivekayuga aims to empower individuals with the knowledge and skills to make environmentally conscious choices in their daily lives. By promoting biodiversity conservation, waste management, renewable energy, and eco-friendly practices, the organization strives to create a greener and healthier world for present and future generations.</p>
-
-<p>With dedicated volunteers and a passionate team, Vivekayuga is at the forefront of inspiring positive change and nurturing a deep appreciation for the environment. Their unwavering commitment to environmental education is paving the way for a brighter, more sustainable future.</p>
-
-                        </section>
-                        <section id="section-faq" class="d-none">FAQ</section>
-                        
-                        <section id="section-updates" class="d-none">Updates/Posts</section>
-                        <section id="section-shop" class="d-none">
-                            <div class="row" ng-repeat="product in products">
-                                <div class="col-5">
-                                    <img ng-src="{{product.image}}" class="my-2 rounded" width="100%">
-                                    <div ng-click="showPreview(product)" class="row justify-content-start" style="cursor:pointer;">
-                                        <div ng-repeat="thumbnail in product.thumbnails" class="col-3" style="padding-left: 0.5 rem; padding-right:0px">
-                                            <img ng-src="{{thumbnail}}" width="100%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-7">
-                                    <h3>{{product.title}}</h3>
-                                    <br>
-                                    <span>A comprehensive study of the most historically significant forts of Karnataka</span>
-                                    <h6 class="my-3">
-                                        <span class="text-danger mr-1">{{getLocalAmount(product.amount, "inr")}}</span>
-                                        <span class="text-grey"><s>{{getLocalAmount(product.original_amount, "inr")}}</s></span>
-                                    </h6>
-                                    <button type="button" ng-click="enterCheckout(product)" class="btn btn-primary mr-1 mt-2"><i class="fas fa-shopping-cart pr-2"></i> &nbsp; Buy Now </button>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="section-gallery" class="d-none">
-                            <div class="row">
-                             <div id="nanogallery2" data-nanogallery2>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <br>
-<div class="row my-3">
-                    <h2 class="d-none section-title mx-auto text-center">Thanks to our Supporters!</h2>
-                    <h4 class="d-none mx-auto text-center">{{campaign.supporters.length}} Supporters contributed to {{campaign.title}}</h4>
-                    <div class="d-none primer d-flex flex-row justify-content-center my-2 flex-wrap">
-                        <span class="m-1" ng-repeat="supporter in campaign.supporters">
-                        <img ng-src={{getPhoto(supporter)}} class="avatar avatar avatar-4" ng-attr-title="{{supporter.name}}" style="cursor: pointer;">
-                        </span>
-                    </div>
-                 
-                    <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-7">
-      <h3>Contact Us</h3>
-      <form id="contact_form" role="form" class="php-email-form">
-
-        <div class="form-group mb-3">
-          <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name" required>
-        </div>
-
-        <div class="form-group mb-3">
-          <input name="email" type="email" class="form-control form-control-lg" placeholder="Your Email" required>
-        </div>
-
-        <div class="form-group mb-3">
-          <input name="phone" id="phone" type="tel" class="form-control form-control-lg" placeholder="Your Phone Number" required>
-          <span id="valid-msg" class="hide"></span>
-          <span id="error-msg" class="hide"></span>
-        </div>
-
-
-        <div class="form-group mb-3">
-          <textarea name="message" class="form-control" cols="45" rows="8" placeholder="Message" required></textarea>
-        </div>
-
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-
-      </form>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-                    <br>
-                    <div class="d-none col-md-12 mt-5">
-                        <div id="testimonial-slider" class="owl-carousel">
-                            <div class="testimonial">
-                                <p class="description">
-                                    Hampi is a sight to behold. All the best team!
-                                </p>
-                                <h3 class="title">Arjun Kumar</h3>
-                                <span class="post">₹5000</span>
-                            </div>
-                            <div class="testimonial">
-                                <p class="description">
-                                    Thanks for making this happen. Good luck!
-                                </p>
-                                <h3 class="title">Srinindhi Shetty</h3>
-                                <span class="post">₹25000</span>
-                            </div>
-                            <div class="testimonial">
-                                <p class="description">
-                                    Amazing project and photographs.
-                                </p>
-                                <h3 class="title">Annie Leonhart</h3>
-                                <span class="post">₹9999</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <!-- Pledge & Rewards -->
             
-        </div>
     </main>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body py-0" id="checkoutBody">
-                    <form>
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="col-12 my-2">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid name is required.
-                                    </div>
-                                </div>
-                                <div class="col-12 my-2">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input id="phone" type="tel" class="form-control" name="phone"/>
-                                </div>
-                                <div class="col-12 my-2">
-                                    <label for="address" class="form-label">Shipping Address</label>
-                                    <textarea class="form-control" id="address" placeholder="#61/A, Vivekayuga Apartments, Whitefield, Bengaluru - 560066" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter your shipping address.
-                                    </div>
-                                </div>
-                                <div class="col-12 my-2">
-                                    <label for="amount" class="form-label">Selected Item: </label>
-                                    <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                                        <span>₹ &nbsp;</span><span id="amount">{{selected_product.amount}}</span><br> 
-                                    </div>
-                                    <span style="font-style: italic">{{selected_product.description}}</span>
-                                </div>
-                            </div>
-                            <div class="col-4 bg-light">
-                                <div class = "col-12">
-                                    <label for="wizard-picture" class="form-label"></label>
-                                    <div class="picture-container">
-                                        <div class="picture">
-                                            <i style="color:black; padding-top: 7px;    padding-right: 15px; position: absolute; right: 0; top: 0;" class="fa fa-pencil"></i>
-                                            <img src="images/pfp-placeholder.png" class="picture-src" id="wizardPicturePreview" title="">
-                                            <input type="file" accept="image/*" id="wizard-picture" class="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="message" class="form-label">Write a message..</label>
-                                    <textarea class="form-control" style="height:100%" id="message" placeholder="All the very best!"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success mx-auto" ng-click="checkoutToGateway()">Continue to Payment</button>
-                </div>
+    <div class="lead container">
+        
+                    <p>We are conducting practical workshops and seminars for the teachers and college
+lecturers on different topics to motivate them and also variety of programs to
+propagate the essence ancient Indian culture with special emphasis on peaceful
+coexistence and values.</p>
+
+                    <p>VIVEKAYUGA Foundation has also successfully organized number of programs in
+which free note books have been distributed to the needy students. Scholarships
+and free uniforms have been given and blood donation camps have been organized
+on different national days.</p>
+        <h3>Jeevana Shikshana Abhiyana</h3>
+<p>Personality of a human being gets a halo when the knowledge acquired is based on the foundation of morality. It is in this context that the foundation has organized a number of programs under the banner of <strong>“Personality Development - Jeevana Shikshana Abhiyana”</strong>. This has benefited already more than 50,000 students.</p>
+
+<h3>Yuvaprerana</h3>
+<p>Today’s urgent need is to find appropriate ideals in various walks of life and place them before students whom they can emulate. Such workshops twice or thrice each year have attracted 300 to 500 youth every time. We have a keen desire to expand the horizon of this program.</p>
+
+<h3>Shikshaka Prerana Samavesh</h3>
+<p>Education is a flow and not a stagnant pool of water. It has to be renewed and invigorated with new thoughts and ideas. Teachers meet is such a special program where teachers interact with experts in the field to get new insights. This program has received tremendous response from the teaching community.</p>
+
+<h3>Vivekayuga Prakashana</h3>
+<p>In order to perpetuate our culture, it is essential that we should document and pass it on to the next generation, the noble ideas of our culture, art, and civilization.</p>
+
+        <p>In this direction, VIVEKAUGA Publication has already brought out 3 books – ‘<strong>JEEVANA SHIKSHANA</strong>’, ‘<strong>PREETIYE JEEVANA</strong>’ for students and “<strong>NAANUNDRE NANGISTA</strong>” for all. We publish a yearly volume entitled ‘<strong>VIVEKAYUGA</strong>’ every year. This is a humble effort to help youngsters who are eager to transform their potentialities into realities.</p>
+        <p>We are happy to share with you that, we have organized Seminars in association with Karnataka Tourism Department “<strong>YOUTH AND TOURISM</strong>” and “<strong>SHIKSHAKA PRERANA</strong>” a teacher’s motivation program for BBMP Teachers and also we have conducted “<strong>HUMAN RIGHTS AND THE ROLE OF WOMEN</strong>” - a seminar for college students at Maharani Lakshmi Ammanni College for Women, Malleshwaram. And also conducted “<strong>HUMAN RIGHTS AND THE ROLE OF YOUTH</strong>” a seminar for college students at Sheshadripuram Degree College, Yelahanka, “<strong>POWER OF VOTE</strong>” an awareness program for college students at Sheshadripuram Main College, Bangalore... “<strong>YUVAPRERANA Program</strong>” at SSMRV Degree College at Jayanagar, Bangalore... and many more.</p>
+
+
+
+        <div class="mt-5 row justify-content-center">
+            <div class="col-md-7">
+                <h3>Contact Us</h3>
+                <form id="contact_form" role="form" class="php-email-form">
+
+                    <div class="form-group mb-3">
+                        <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input name="email" type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input name="phone" id="phone" type="tel" class="form-control form-control-lg" placeholder="Your Phone Number" required>
+                        <span id="valid-msg" class="hide"></span>
+                        <span id="error-msg" class="hide"></span>
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <textarea name="message" class="form-control" cols="45" rows="8" placeholder="Message" required></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
             </div>
         </div>
+    
     </div>
-    <div class="modal" id="certificateModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Thank you for supporting this project!</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-8 col-lg-9 col-xl-8">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0">
-                                        <img ng-src="{{user_profile.image_src}}" id="cert-user-image" class="rounded-circle mb-4 mb-lg-0 shadow-2" width="90"
-                                            height="90">
-                                    </div>
-                                    <div class="flex-grow-1 ms-4 ps-3">
-                                        <figure>
-                                            <blockquote class="blockquote mb-4">
-                                                <p>
-                                                    <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                    <span class="font-italic">I supported this awesome Hampi Photography project on Vivekayuga. Help me spread the word!</span>
-                                                </p>
-                                            </blockquote>
-                                            <figcaption class="blockquote-footer">
-                                                {{user_profile.name}}
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-5">
-                                <img src="images/certificate/hampi-vector.png" width="100%">
-                            </div>
-                            <div class="col-5">
-                                <img src="images/crowdmeta-logo.png" width="100%"> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <span>Spread the Word!</span>
-                    <span class="text-center mx-auto">
-                        <!-- Facebook -->
-                        <i class="fab fa-facebook-f fa-2x me-2" style="color: #3b5998; cursor: pointer;"></i>
-                        <!-- Twitter -->
-                        <i class="fab fa-twitter fa-2x me-2" style="color: #55acee;  cursor: pointer;"></i>
-                        <!-- Instagram -->
-                        <i class="fab fa-instagram fa-2x me-2" style="color: #ac2bac;  cursor: pointer;"></i>
-                        <!-- Linkedin -->
-                        <i class="fab fa-linkedin-in fa-2x me-2" style="color: #0082ca;  cursor: pointer;"></i>
-                        <!-- Pinterest -->
-                        <i class="fab fa-pinterest fa-2x me-2" style="color: #c61118;  cursor: pointer;"></i>
-                        <!-- Reddit -->
-                        <i class="fab fa-reddit-alien fa-2x me-2" style="color: #ff4500;  cursor: pointer;"></i>
-                        <!-- Whatsapp -->
-                        <i class="fab fa-whatsapp fa-2x me-2" style="color: #25d366;  cursor: pointer;"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Product Images Modal -->
-    <div class="modal fade" id="previewProductModal" tabindex="-1" aria-labelledby="previewProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="previewProductModalLabel">Images ({{preview_product.thumbnails.length}})</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="row modal-body">
-                    <div class="col-8">
-                        <img id="product-image-focus" ng-src="{{preview_product.focusTn}}" class="py-2" width="100%">
-                    </div>
-                    <div class="col-4 py-2">
-                        <div class="row justify-content-start" >
-                            <div class="col-4" ng-repeat="thumbnail in preview_product.thumbnails" style="padding-left: 0.5 rem; padding-right:0px">
-                                <img ng-click="setFocusThumbnail(thumbnail)" style="cursor:pointer;" ng-src="{{thumbnail}}" width="100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Campaign Thumbnails Modal-->
-    <div class="modal fade" id="thumbnailModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
-                            <button ng-repeat="tn in campaign.thumbnails.slice(1) track by $index" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$index + 1}}" aria-label="Slide {{$index + 1}}" ></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img ng-src="{{campaign.thumbnails[0]}}" class="d-block w-100"> 
-                            </div>
-                            <div ng-repeat="tn in campaign.thumbnails.slice(1)" class="carousel-item">
-                                <img ng-src="{{tn}}" class="d-block w-100">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <footer class="text-muted py-5">
+        
+        <div class="logo">
+            <!-- Your left logo image or content goes here -->
+            <center><img style="width:30%" src="vy-logo-ka.png" alt="Kannada Logo"></center>
+        </div>
         <div class="container">
+            
             <p class="float-end mb-1">
             <a href="#top">Back to top</a>
             </p>
@@ -574,78 +283,88 @@
     <!-- nanogallery2 -->
     <script  type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.js"></script>
 
+    
+
     <script>
-            jQuery(document).ready(function () {
-              jQuery("#nanogallery2").nanogallery2({
-                kind:             'nano_photos_provider2',
-                dataProvider:     'https://mesio.online/vy_gallery/nano_photos_provider2.php',
-                  // GALLERY AND THUMBNAIL LAYOUT
-                  galleryL1DisplayMode: 'fullContent',                // first level display mode -> fullContent
-                  galleryDisplayMode: 'rows',                         // other levels display mode -> 4 rows
-                  galleryMaxRows: 6,
+        jQuery(document).ready(function () {
+            jQuery("#ng2").nanogallery2({
 
-                  // thumbnail on first gallery level
-                  thumbnailL1Height: 400, thumbnailL1Width: 'auto',      // first level -> grid kayout
-                  thumbnailL1GutterWidth: 1,
-                  thumbnailL1GutterHeight: 2,
-                  thumbnailL1BorderHorizontal: 0,
-                  thumbnailL1BorderVertical: 0,
+                // CONTENT SOURCE
+                // The optional add-on nanoPhotosProvider is used for this example - this is not mandatory and can easily be replaced by a list of medias
+                kind: 'nano_photos_provider2',
+                dataProvider: 'https://mesio.online/nano_photos_provider2/nano_photos_provider2.php',
+                album: 'vivekayuga',
+                galleryDisplayTransitionDuration: 1500,
 
-                  // thumbnail on other gallery level
-                  thumbnailHeight: 400, thumbnailWidth: 'auto',       // other levels -> justified layout
-                  thumbnailGutterWidth: 2,
-                  thumbnailGutterHeight: 2,
-                  thumbnailBorderHorizontal: 0,
-                  thumbnailBorderVertical: 0,
+                // GALLERY AND THUMBNAIL LAYOUT
+                galleryMosaic : [                       // default layout
+                    { "w": 16, "h": 18, "c": 1,  "r": 1  },
+                    { "w": 8,  "h": 9,  "c": 21, "r": 5  },
+                    { "w": 4,  "h": 6,  "c": 28, "r": 2  },
+                    { "w": 4,  "h": 6,  "c": 19, "r": 11 },
+                    { "w": 6,  "h": 8,  "c": 27, "r": 10 }
+                ],
+                galleryMosaicXS : [                     // layout for XS width
+                    { "w": 6, "h": 9, "c": 1,  "r": 1  },
+                    { "w": 4,  "h": 4,  "c": 9, "r": 3  },
+                    { "w": 2,  "h": 3,  "c": 12, "r": 1  },
+                    { "w": 2,  "h": 3,  "c": 8, "r": 5 },
+                    { "w": 3,  "h": 4,  "c": 12, "r": 6 }
+                ],
+                galleryMosaicSM : [                     // layout for SM width
+                    { "w": 6, "h": 9, "c": 1,  "r": 1  },
+                    { "w": 4,  "h": 4,  "c": 9, "r": 3  },
+                    { "w": 2,  "h": 3,  "c": 12, "r": 1  },
+                    { "w": 2,  "h": 3,  "c": 8, "r": 5 },
+                    { "w": 3,  "h": 4,  "c": 12, "r": 6 }
+                ],
+                galleryMaxRows: 1,
+                galleryDisplayMode: 'rows',
+                gallerySorting: 'random',
+                thumbnailDisplayOrder: 'random',
 
-                  thumbnailAlignment: 'fillWidth',
+                thumbnailAlignment: 'scaled',
+                thumbnailHeight: 100, thumbnailWidth: 100,
+                thumbnailGutterWidth: 0, thumbnailGutterHeight: 0,
+                thumbnailBorderHorizontal: 0, thumbnailBorderVertical: 0,
 
-                  // THUMBNAIL TOOLS & LABEL
-                  thumbnailToolbarImage : null,
-                  thumbnailToolbarAlbum: null,
-                  // first level label
-                  <!-- thumbnailL1Label: { display: true, position:'overImageOnBottom', hideIcons: true, titleFontSize: '1em', align: 'center', titleMultiLine:true, displayDescription: false}, -->
-                  thumbnailL1Label: { display: false, position:'overImageOnLeft', hideIcons: true, titleFontSize: '2em', align: 'left', titleMultiLine:true, displayDescription: false},
-                  // other level label
-                  thumbnailLabel: { display: true, position:'overImageOnBottom', hideIcons: true, titleFontSize: '1em', align: 'center', titleMultiLine:true, displayDescription: false},
+                thumbnailToolbarImage : null,
+                thumbnailToolbarAlbum: null,
 
-                  thumbnailToolbarAlbum: { topRight: 'counter' },
+                thumbnailLabel: { display: false },
 
-                  // DISPLAY ANIMATION
-                  thumbnailL1DisplayTransition: 'flipUp',         // first level display animation
-                  thumbnailDisplayTransition: 'slideDown',        // other levels display animation
-                  thumbnailDisplayTransitionDuration: 500,
-                  thumbnailDisplayInterval: 30,
+                // DISPLAY ANIMATION
+                galleryDisplayTransition: 'rotateX',        // gallery display animation
+                galleryDisplayTransitionDuration: 1500,
+                thumbnailDisplayTransition: 'scaleUp',     // thumbnail display animation
+                thumbnailDisplayTransitionDuration: 600,
+                thumbnailDisplayInterval: 30,
 
-                  // THUMBNAIL'S HOVER ANIMATION
-                  thumbnailL1HoverEffect2: 'imageGrayOn|title_color_#46D6AB_#aaaaaa|labelOpacity50',
-                  // other levels -> no hover effect
 
-                  // touch handling
-                  touchAnimation: false,
-                  touchAutoOpenDelay: 800,
+                // HOVER ANIMATION
+                thumbnailBuildInit2: '.nGY2GThumbnailAlbumTitle_border-left_5px solid #23CB99|.nGY2GThumbnailAlbumTitle_margin_20px|\
+                title_backgroundColor_rgba(200,200,200,0.8)|title_color_#000',
+                thumbnailHoverEffect2: 'image_scale_1.00_1.15_500_bounce|image_rotateZ_0deg_05deg',
+                touchAnimation: true,
+                touchAutoOpenDelay: 500,
 
-                  // GALLERY THEME
-                  galleryTheme : {
-                      thumbnail: { background: '#111', titleShadow : '', descriptionShadow : 'none', titleColor: '#fff', borderColor: '#000' },
-                      navigationBreadcrumb: { background : '#3C4B5B' },
-                  },
-                  
-                  // LIGHTBOX
-                  viewerToolbar:    {   // bottom toolbar
-                      display: true,
-                      standard:  'label',
-                      minimized: 'label' },
-                  viewerTools:    {
-                      topLeft:   '',
-                      topRight:  'rotateLeft, rotateRight, fullscreenButton, closeButton'
-                  },
+                // LIGHTBOX
+                viewerToolbar:    {   // bottom toolbar
+                    display: true,
+                    standard:  'label',
+                    minimized: 'label' },
+                viewerTools:    {
+                    topLeft:   '',
+                    topRight:  'rotateLeft, rotateRight, fullscreenButton, closeButton'
+                },
 
-                  // DEEP LINKING
-                  locationHash: true 
-
-              });
+                // DEEP LINKING
+                locationHash: false
             });
+        });
+
+
+
     </script>
 
 </body>
