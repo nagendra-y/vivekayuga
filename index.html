@@ -40,6 +40,9 @@
         <!-- Razorpay Standard Integration: https://razorpay.com/docs/payment-gateway/web-integration/standard -->
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script> 
     </head>
+
+
+
 <body ng-cloak id="cmApp" ng-app="crowdmeta" ng-controller="cmController" ng-init="init()">
     <header>
         <div class="collapse bg-success" id="navbarHeader">
@@ -131,7 +134,7 @@ all irrespective of caste, creed or religion.</p>
                         <i class="fab fa-whatsapp fa-2x me-2" style="color: #25d366;  cursor: pointer;"></i>
                     </section>
                 </div>
-                <div class="col-md-8 col-12">
+                <div class="col-md-8 col-12 mobile-height">
                     <div id="ng2" data-nanogallery2>
                 </div>
             </div>
@@ -292,7 +295,7 @@ on different national days.</p>
                 // CONTENT SOURCE
                 // The optional add-on nanoPhotosProvider is used for this example - this is not mandatory and can easily be replaced by a list of medias
                 kind: 'nano_photos_provider2',
-                dataProvider: 'https://mesio.online/nano_photos_provider2/nano_photos_provider2.php',
+                dataProvider: 'https://mesio.online/nano_photos_provider_vyuga/nano_photos_provider2.php',
                 album: 'vivekayuga',
                 galleryDisplayTransitionDuration: 1500,
 
@@ -320,7 +323,6 @@ on different national days.</p>
                 ],
                 galleryMaxRows: 1,
                 galleryDisplayMode: 'rows',
-                gallerySorting: 'random',
                 thumbnailDisplayOrder: 'random',
 
                 thumbnailAlignment: 'scaled',
